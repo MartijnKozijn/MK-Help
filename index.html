@@ -1,115 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <meta name="description" content="Martijn Kozijn bug formulier">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Martijn Kozijn bug formulier</title>
-    <style>
-       body {
-            background-image: url(./img/circle.jpg); /* Witte achtergrond voor een schone look */
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            color: #333; /* Basis zwarte tekst voor eenvoud */
-            font-family: 'Roboto', sans-serif; /* Eenvoudige en moderne lettertype */
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
 
-        form {
-            background: rgba(255, 255, 255, 0.8); /* Achtergrond van het formulier ook wit voor eenheid */
-            border: 1px solid #ddd; /* Subtiele rand */
-            border-radius: 8px;
-            width: 80%;
-            max-width: 400px;
-            padding: 20px;
-            box-sizing: border-box;
-            box-shadow: #858585 0px 0px 10px 0px; /* Schaduw voor een beetje diepte */
-        }
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Martijn Kozijn bug formulier">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Martijn Kozijn bug formulier</title>
+  <style>
+    body {
+      background-image: url(./img/circle.jpg);
+      /* Witte achtergrond voor een schone look */
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      color: #333;
+      /* Basis zwarte tekst voor eenvoud */
+      font-family: 'Roboto', sans-serif;
+      /* Eenvoudige en moderne lettertype */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-        h2, h3 {
-            text-align: center;
-            color: #333; /* Zwarte tekst voor titels */
-        }
+    form {
+      background: rgba(255, 255, 255, 0.8);
+      /* Achtergrond van het formulier ook wit voor eenheid */
+      border: 1px solid #ddd;
+      /* Subtiele rand */
+      border-radius: 8px;
+      width: 80%;
+      max-width: 400px;
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: #858585 0px 0px 10px 0px;
+      /* Schaduw voor een beetje diepte */
+    }
 
-        h3 {
-            font-size: small;
-            margin-top: -10px;
-        }
+    h2,
+    h3 {
+      text-align: center;
+      color: #333;
+      /* Zwarte tekst voor titels */
+    }
 
-        label {
-            display: block;
-            margin: 10px 0;
-            color: #333; /* Consistente kleur voor labels */
-        }
+    h3 {
+      font-size: small;
+      margin-top: -10px;
+    }
 
-        input[type="text"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            box-sizing: border-box;
-            margin-bottom: 15px;
-            border: 1px solid #ddd; /* Subtiele rand */
-            border-radius: 4px;
-            font-family: inherit; /* Zorgt voor consistentie in tekststijl */
-        }
+    label {
+      display: block;
+      margin: 10px 0;
+      color: #333;
+      /* Consistente kleur voor labels */
+    }
 
-        input[type="submit"] {
-            background-color: #333; /* Zwarte knop voor een strakke uitstraling */
-            color: #fff; /* Witte tekst op de knop */
-            font-weight: bold;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      /* Subtiele rand */
+      border-radius: 4px;
+      font-family: inherit;
+      /* Zorgt voor consistentie in tekststijl */
+    }
 
-        /* Extra stijlen voor ruimte en ademruimte */
-        hr {
-            border: none;
-            height: 1px;
-            background-color: #ddd; /* Subtiele scheiding */
-            margin: 20px 0;
-        }
+    input[type="submit"] {
+      background-color: #333;
+      /* Zwarte knop voor een strakke uitstraling */
+      color: #fff;
+      /* Witte tekst op de knop */
+      font-weight: bold;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      transition: 0.4s;
 
-        /* Stijl om elementen te verbergen of tonen in script */
-        .hidden {
-            display: none;
-        }
+    }
 
-        .help-icon {
-           display: inline-block;
-           margin-left: 10px;
-           cursor: pointer;
-           color: #E51420;
-           float: right;
-       }
-       .help-text {
-          font-family: Verdana, Geneva, Tahoma, sans-serif;
-           display: none;
-           color: #323232;
-           border: 1px solid #323232;
-           border-radius: 8px;
-           padding: 5px;
-           font-weight: 700;
-           margin: 5px;
-           width: 300px;
-       }
+    input[type="submit"]:hover {
+      background-color: #4e4e4e;
+      box-shadow: #858585 0px 0px 10px 0px;
+      transition: 0.1s;
+    }
 
-       @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    /* Extra stijlen voor ruimte en ademruimte */
+    hr {
+      border: none;
+      height: 1px;
+      background-color: #ddd;
+      /* Subtiele scheiding */
+      margin: 20px 0;
+    }
 
-    </style>
+    /* Stijl om elementen te verbergen of tonen in script */
+    .hidden {
+      display: none;
+    }
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
+    .help-icon {
+      display: inline-block;
+      margin-left: 10px;
+      cursor: pointer;
+      color: #E51420;
+      float: right;
+    }
+
+    .help-text {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      display: none;
+      color: #323232;
+      border: 1px solid #323232;
+      border-radius: 8px;
+      padding: 5px;
+      font-weight: 700;
+      margin: 5px;
+      width: 300px;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
         var selectBugLocation = document.querySelector(
           'select[name="entry.2009510255"]'
         );
@@ -202,36 +225,40 @@
             helpDiv.style.display = helpDiv.style.display === 'block' ? 'none' : 'block';
         }
 
-    </script>
-  </head>
+  </script>
+</head>
 
-  <body>
-    <form
-      method="post"
-      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeY3rSHX418rtIAO8lradQgU9S3DJPFBGl_S3TMiKEdnVaSaw/formResponse"
-    >
-    <a href="https://www.wallgrind05.nl/"><img src="https://www.wallgrind05.nl/img/logo-1669651557.jpg" alt="Wallgrind05 logo" width="100%" style="border-radius: 8px;"></a>
+<body>
+  <form method="post"
+    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeY3rSHX418rtIAO8lradQgU9S3DJPFBGl_S3TMiKEdnVaSaw/formResponse">
+    <a
+      href="https://www.martijnkozijntest.nl/"><img src="https://www.martijnkozijntest.nl/img/logo-1706280367.jpg" alt="MartijnKozijn logo" width="100%" style="border-radius: 8px;"></a>
     <hr>
-      <h2>Bug formulier</h2>
-      <h3>( een bug is een fout in het systeem )</h3>
+    <h2>Bug formulier</h2>
+    <h3>( een bug is een fout in het systeem )</h3>
+    <!-- <hr>
+      <h3>Bekende bugs:</h3>
+      <h3>Sommige producten worden als €1,- excl. btw weergegeven</h3> -->
+    <hr>
 
-      <label>Wat is je naam?<!--<span class="help-icon" onclick="toggleHelp('help-name')">Help</span>--></label>
-        <div class="help-text" id="help-name">Vul hier je volledige naam in.</div>
-      
-      <input type="text" name="entry.2145981883" placeholder="Volledige naam"/>
-     
-      <!--Eerste bug-->
-      <label>Waar staat de bug?</label>
-      <select name="entry.2009510255">
+
+    <label>Wat is je naam?<!--<span class="help-icon" onclick="toggleHelp('help-name')">Help</span>--></label>
+    <div class="help-text" id="help-name">Vul hier je volledige naam in.</div>
+
+    <input type="text" name="entry.2145981883" placeholder="Volledige naam"/>
+
+    <!--Eerste bug-->
+    <label>Waar staat de bug?</label>
+    <select name="entry.2009510255">
         <option value="Homepage">Homepage</option>
         <option value="Productiepagina (algemeen, bij elk product)">
-          Productiepagina (algemeen, bij elk product)
+          Productpagina (algemeen, bij elk product)
         </option>
         <option value="Maatwerkproduct">Maatwerkproduct</option>
         <option value="Anders:">Anders:</option>
       </select>
 
-      <input
+    <input
         type="text"
         name="entry.384797366"
         id="andersInput"
@@ -239,8 +266,8 @@
         placeholder="Vul de exacte url in (kopieer je adres)"
       />
 
-      <label>Wat voor bug betreft het?</label>
-      <select name="entry.1214817961">
+    <label>Wat voor bug betreft het?</label>
+    <select name="entry.1214817961">
         <option value="Taal- spelling">Taal- spelling</option>
         <option value="Vormgeving (uitlijnen, passend in velden, kleuren etc)">
           Vormgeving (uitlijnen, passend in velden, kleuren etc)
@@ -253,7 +280,7 @@
         <option value="Anders:">Anders:</option>
       </select>
 
-      <input
+    <input
         type="text"
         name="entry.384797366"
         id="andersInput2"
@@ -261,9 +288,9 @@
         placeholder="Wat voor een soort bug / fout?"
       />
 
-      <label>Omschrijf de bug en geef eventueel een oplossing:</label>
-      <textarea name="entry.1159318438" rows="4" cols="50"></textarea>
-<!--
+    <label>Omschrijf de bug en geef eventueel een oplossing:</label>
+    <textarea name="entry.1159318438" rows="4" cols="50"></textarea>
+    <!--
       <input type="checkbox" name="2eBug" id="2eBug" />
       <label for="2eBug" style="margin: -20px 0px 15px 25px"
         >Nog een bug toevoegen</label
@@ -328,7 +355,8 @@
         <textarea name="entry.1824645668" rows="4" cols="50"></textarea>
       </div>
 -->
-      <input type="submit" value="Verzenden" />
-    </form>
-  </body>
+    <input type="submit" value="Verzenden" />
+  </form>
+</body>
+
 </html>
